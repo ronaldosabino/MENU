@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --input-bg: #e6e7e9;
+  --carousel-gradient: linear-gradient(to right, #ff9f06, #ffe1b4);
+  --footer: #ff9f06;
+  --page-up: #333333;
+}
+
+.dark-theme {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --input-bg: #333333;
+  --carousel-gradient: linear-gradient(to right, #3e5916, #272b21);
+  --footer: #3e5916;
+  --page-up: #e6e7e9;
+}
+
+/* Aplicar variáveis */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+input,
+.form-control {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+}
