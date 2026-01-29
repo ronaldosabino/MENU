@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -158,5 +158,17 @@ export class MenuComponent {
   closeModalItem(): void {
     this.selectedItem = null;
     document.body.style.overflow = ''; // libera o scroll
+  }
+
+  showScrollButton: boolean = false;
+
+  // Detecta o scroll da página
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (window.scrollY > 340) {
+      this.showScrollButton = true;
+    } else {
+      this.showScrollButton = false;
+    }
   }
 }

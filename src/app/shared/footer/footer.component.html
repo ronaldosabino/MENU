@@ -1,38 +1,106 @@
-<footer class="mt-5" style="background: var(--footer); color: #FFF">
-  <div class="d-flex gap-5 justify-content-center py-3 border-bottom">
-    <i class="bi bi-instagram fs-1"></i>
-    <i class="bi bi-whatsapp fs-1"></i>
-  </div>
+<footer class="footer mt-5 text-light pt-5">
 
-  <div class="d-flex justify-content-evenly py-3 border-bottom">
-    <div (click)="openModalAdress()" class="cursor-pointer">
-      <h4 class="fw-normal">ENDEREÇO</h4>
-      <small>Avenida Lorem Ipsum, 123</small><br>
-      <small>Recife, Pernambuco</small>
+  <div class="container">
+
+    <!-- TOP GRID -->
+    <div class="row gy-4">
+
+      <!-- BRAND / ABOUT -->
+      <div class="col-12 col-md-4">
+        <h4 class="fw-semibold mb-3">Ronaldo Sabino</h4>
+        <p class="footer-text">
+          Um cardápio digital moderno, bonito e responsivo, feito para oferecer
+          a melhor experiência aos seus clientes.
+        </p>
+
+        <!-- SOCIAL -->
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="social-icon">
+            <i class="bi bi-instagram"></i>
+          </a>
+
+          <a href="#" class="social-icon">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+
+          <a href="#" class="social-icon">
+            <i class="bi bi-facebook"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-semibold mb-3">Menu</h6>
+        <ul class="list-unstyled footer-links">
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Cardápio</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- INFO -->
+      <div class="col-6 col-md-3">
+        <h6 class="fw-semibold mb-3">Funcionamento</h6>
+        <ul class="list-unstyled footer-text">
+          <li>📅 Seg – Sáb</li>
+          <li>⏰ 08:00 – 17:00</li>
+          <li>🚀 Delivery disponível</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="col-12 col-md-3">
+        <h6 class="fw-semibold mb-3">Contato</h6>
+
+        <p class="footer-text mb-2">
+          <i class="bi bi-telephone me-2"></i>
+          <span>(81) 99999-9999</span>
+        </p>
+
+        <p class="footer-text mb-2">
+          <i class="bi bi-envelope me-2"></i>
+          <span>contato.gmail.com</span>
+        </p>
+
+        <button class="btn btn-outline-light btn-sm mt-2 rounded-pill px-3" (click)="openModalAdress()">
+          <i class="bi bi-geo-alt me-1"></i>
+          Ver endereço
+        </button>
+      </div>
     </div>
 
-    <div>
-      <h4 class="fw-normal">CONTATO</h4>
-      <small>(81) 99999-9999</small>
-    </div>
-  </div>
+    <!-- DIVIDER -->
+    <hr class="footer-divider my-4">
 
-  <div class="d-flex justify-content-center py-3">
-    <small>© 2026 Ronaldo Sabino. Todos os direitos reservados.</small>
+    <!-- BOTTOM -->
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center pb-3 gap-2">
+      <small class="opacity-75">
+        © 2026 Ronaldo Sabino. Todos os direitos reservados.
+      </small>
+    </div>
   </div>
 </footer>
 
-<!-- Modal items -->
-<div class="modal fade show" tabindex="-1" style="display: block; background: rgba(0, 0, 0, 0.5); z-index: 9999;" *ngIf="adress === true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color);">
-      <div class="modal-header d-flex justify-content-between align-items-center">
-        <h5 class="modal-title">Estamos localizados no coração do Recife! ❤️</h5>
-        <i class="bi bi-x fs-1" (click)="closeModalAdress()" aria-label="Close"></i>
-      </div>
-      <div class="modal-body d-flex justify-content-center align-items-center">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15801.79813277638!2d-34.88062045206317!3d-8.055543471549795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a2a565885f%3A0x802b0e52579b84b7!2sRecife%2C%20PE%2C%2050030-230!5e0!3m2!1spt-BR!2sbr!4v1753861680534!5m2!1spt-BR!2sbr" max-width="900px" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+
+<!-- MODAL MAP -->
+<div class="modal-backdrop-custom" *ngIf="adress" (click)="closeModalAdress()">
+  <div class="modal-custom" (click)="$event.stopPropagation()">
+
+    <!-- HEADER -->
+    <div class="modal-header-custom">
+      <h5 class="m-0 fw-semibold">
+        Estamos localizados no coração do Recife ❤️
+      </h5>
+
+      <button class="close-btn" (click)="closeModalAdress()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+
+    <!-- BODY -->
+    <div class="modal-body-custom d-flex justify-content-center">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15801.79813277638!2d-34.88062045206317!3d-8.055543471549795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a2a565885f%3A0x802b0e52579b84b7!2sRecife%2C%20PE%2C%2050030-230!5e0!3m2!1spt-BR!2sbr!4v1753861680534!5m2!1spt-BR!2sbr" max-width="900px" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </div>

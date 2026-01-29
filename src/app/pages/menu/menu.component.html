@@ -71,11 +71,18 @@
   </div>
 </div>
 
-<div class="d-flex justify-content-end px-0" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+<!-- <div class="d-flex justify-content-end px-0" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+  <a href="#page-up" class="text-decoration-none">
+    <i class="bi bi-arrow-up-circle-fill fs-1" style="color: var(--page-up);"></i>
+  </a>
+</div> -->
+
+<div *ngIf="showScrollButton" class="d-flex justify-content-end px-0" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
   <a href="#page-up" class="text-decoration-none">
     <i class="bi bi-arrow-up-circle-fill fs-1" style="color: var(--page-up);"></i>
   </a>
 </div>
+
 
 <!-- Modal items -->
 <div class="modal fade show" tabindex="-1" style="display: block; background: rgba(0, 0, 0, 0.5); z-index: 9999;" *ngIf="selectedItem">
