@@ -3,14 +3,6 @@
   <div class="d-flex justify-content-center mb-3 mx-3 rounded-5" style="height: 150px; background: var(--carousel-gradient);" id="carousel">
     <div id="carouselExampleControls" class="carousel slide d-flex align-items-center justify-content-center" data-bs-ride="carousel" style="width: 600px;">
 
-      <!-- <div class="carousel-indicators">
-        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-
-        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-
-        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div> -->
-
       <div class="carousel-indicators">
         <button *ngFor="let slide of carouselItems; let i = index" type="button" data-bs-target="#carouselExampleControls" [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-label]="'Slide ' + (i + 1)"></button>
       </div>
@@ -28,52 +20,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-      <!-- <div class="carousel-inner text-white">
-        <div class="carousel-item active">
-          <div class="d-flex justify-content-between align-items-center p-3">
-            <div class="text-left">
-              <h4>Almoço</h4>
-              <small>Temos o melhor menu executivo da região.</small>
-            </div>
-            <img src="assets/lunch.png" alt="Imagem 1" class="img-fluid" style="max-height: 150px; max-width: 150px">
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="d-flex justify-content-between align-items-center p-3">
-            <div class="text-left">
-              <h4>Sobremesa</h4>
-              <small>Temos a melhor sobremesa da região</small>
-            </div>
-            <img src="assets/dessert.png" alt="Imagem 2" class="img-fluid" style="max-height: 150px; max-width: 150px">
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="d-flex justify-content-between align-items-center py-3 ps-3">
-            <div class="text-left">
-              <h4>Fast Food</h4>
-              <small>Temos o melhor Fast Food <br>da região.</small>
-            </div>
-            <img src="assets/fastfood.png" alt="Imagem 3" class="img-fluid" style="max-height: 200px; max-width: 200px">
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Slide 2 -->
-      <!-- <div *ngFor="let item of carouselItems" class="carousel-item">
-          <div class="d-flex justify-content-between align-items-center p-3">
-            <div class="text-left">
-              <h4>{{ item.title }}</h4>
-              <small>{{ item.description }}</small>
-            </div>
-            <img [src]="item.image" alt="Imagem 2" class="img-fluid" style="max-height: 200px; max-width: 200px">
-          </div>
-        </div> -->
 
       <!-- Controls -->
       <button class="carousel-control-prev opacity-0" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
