@@ -114,12 +114,12 @@ export class MenuComponent {
     {
       title: 'Almoço',
       description: 'Temos o melhor menu executivo da região',
-      image: 'assets/almoco.png',
+      image: 'assets/lunch.png',
     },
     {
       title: 'Sobremesa',
       description: 'Temos a melhor sobremesa da região',
-      image: 'assets/sobremesa.png',
+      image: 'assets/dessert.png',
     },
     {
       title: 'Fast Food',
