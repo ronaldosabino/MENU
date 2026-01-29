@@ -1,31 +1,58 @@
-<div style="background-color: var(--bg-color); color: var(--text-color);">
+<div class="container" style="background-color: var(--bg-color); color: var(--text-color);">
   <!-- Carousel -->
   <div class="d-flex justify-content-center mb-3 mx-3 rounded-5" style="height: 150px; background: var(--carousel-gradient);" id="carousel">
     <div id="carouselExampleControls" class="carousel slide d-flex align-items-center justify-content-center" data-bs-ride="carousel" style="width: 600px;">
+
+      <!-- <div class="carousel-indicators">
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div> -->
+
+      <div class="carousel-indicators">
+        <button *ngFor="let slide of carouselItems; let i = index" type="button" data-bs-target="#carouselExampleControls" [attr.data-bs-slide-to]="i" [class.active]="i === 0" [attr.aria-label]="'Slide ' + (i + 1)"></button>
+      </div>
+
+
       <div class="carousel-inner text-white">
-        <!-- Slide 1 -->
+        <div *ngFor="let slide of carouselItems; let i = index" class="carousel-item" [class.active]="i === 0">
+          <div class="d-flex justify-content-between align-items-center p-3">
+            <div class="text-left">
+              <h4>{{ slide.title }}</h4>
+              <small>{{ slide.description }}</small>
+            </div>
+
+            <img [src]="slide.image" [alt]="slide.title" class="img-fluid" style="max-height: 150px; max-width: 150px" />
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- <div class="carousel-inner text-white">
         <div class="carousel-item active">
           <div class="d-flex justify-content-between align-items-center p-3">
             <div class="text-left">
               <h4>Almoço</h4>
               <small>Temos o melhor menu executivo da região.</small>
             </div>
-            <img src="assets/almoco.png" alt="Imagem 1" class="img-fluid" style="max-height: 200px; max-width: 200px">
+            <img src="assets/lunch.png" alt="Imagem 1" class="img-fluid" style="max-height: 150px; max-width: 150px">
           </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="carousel-item">
           <div class="d-flex justify-content-between align-items-center p-3">
             <div class="text-left">
               <h4>Sobremesa</h4>
               <small>Temos a melhor sobremesa da região</small>
             </div>
-            <img src="assets/sobremesa.png" alt="Imagem 2" class="img-fluid" style="max-height: 200px; max-width: 200px">
+            <img src="assets/dessert.png" alt="Imagem 2" class="img-fluid" style="max-height: 150px; max-width: 150px">
           </div>
         </div>
 
-        <!-- Slide 3 -->
         <div class="carousel-item">
           <div class="d-flex justify-content-between align-items-center py-3 ps-3">
             <div class="text-left">
@@ -35,7 +62,7 @@
             <img src="assets/fastfood.png" alt="Imagem 3" class="img-fluid" style="max-height: 200px; max-width: 200px">
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Slide 2 -->
       <!-- <div *ngFor="let item of carouselItems" class="carousel-item">
@@ -79,7 +106,7 @@
   <div *ngFor="let item of filteredMenuItems" class="my-3">
     <div class="mx-3" [id]="item.id">
       <h3 class="mb-3">{{ item.title }}</h3>
-      <ul class="list-group list-group-vertical gap-2">
+      <ul class="list-group list-group-vertical gap-2 cursor-pointer">
         <li *ngFor="let subitem of item.items" (click)="openModalItem(subitem)" class="list-group-item" style="background-color: var(--bg-color); color: var(--text-color); border: solid 2px var(--input-bg)">
           <div class="d-flex justify-content-between align-items-center mb-1">
             <div style="max-width: 70%;">
@@ -110,7 +137,7 @@
     <div class="modal-content" style="background-color: var(--bg-color); color: var(--text-color);">
       <div class="modal-header d-flex justify-content-between align-items-center">
         <h5 class="modal-title">{{ selectedItem.subtitle }}</h5>
-        <i class="bi bi-x fs-1" (click)="closeModalItem()" aria-label="Close"></i>
+        <i class="bi bi-x fs-1 cursor-pointer" (click)="closeModalItem()" aria-label="Close"></i>
       </div>
       <div class="modal-body">
         <div class="d-flex justify-content-center align-items-center">

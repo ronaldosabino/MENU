@@ -1,54 +1,53 @@
-<!-- <header class="d-flex justify-content-between align-items-center p-2 mx-3" style="background-color: var(--bg-color); color: var(--text-color);">
-  <div class="d-flex justify-content-start w-25 h-25">
-    <i class="bi bi-list fs-1 cursor-pointer" (click)="toggleSidebar()"></i>
-  </div>
-
-  <div class="d-flex justify-content-center w-25 h-25">
-    <img src="assets/logo.png" alt="Logo" class="mw-100 mh-100">
-  </div>
-
-  <div class="d-flex align-items-center justify-content-end gap-1 w-25">
-    <i class="bi bi-sun fs-2"></i>
-    <div class="form-check form-switch d-flex align-items-center justify-content-center">
-      <input type="checkbox" id="themeSwitch" class="form-check-input" role="switch" (change)="toggleTheme($event)">
-    </div>
-    <i class="bi bi-moon fs-2"></i>
-  </div>
-</header> -->
-
 <!-- Overlay -->
 <div class="overlay" *ngIf="showSidebar" (click)="closeSidebar()"></div>
 
-<header class="d-flex justify-content-between align-items-center p-2 mx-3" style="background-color: var(--bg-color); color: var(--text-color); position: relative;" id="page-up">
-  <div class="d-flex justify-content-start w-25 h-25">
-    <i class="bi bi-list fs-1" (click)="openSidebar()" style="cursor: pointer;"></i>
-  </div>
+<!-- Header -->
+<header class="header py-5" id="page-up">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between py-2">
 
-  <div class="d-flex justify-content-center w-25 h-25">
-    <img src="assets/logo.png" alt="Logo" class="mw-100 mh-100">
-  </div>
+      <!-- Botão Menu -->
+      <div class="header-col text-start">
+        <i class="bi bi-list fs-1 cursor-pointer" (click)="openSidebar()"></i>
+      </div>
 
-  <div class="d-flex align-items-center justify-content-end gap-1 w-25">
-    <i class="bi bi-sun fs-6"></i>
-    <div class="form-check form-switch d-flex align-items-center justify-content-center">
-      <input type="checkbox" id="themeSwitch" class="form-check-input" role="switch" (change)="toggleTheme($event)">
+      <!-- Logo Central -->
+      <div class="header-col text-center">
+        <!-- <img src="assets/logo.png" alt="Logo" class="img-fluid logo" /> -->
+        <div class="logo-text fs-1">🍽️</div>
+      </div>
+
+      <!-- Switch Tema -->
+      <div class="header-col d-flex justify-content-end align-items-center gap-2">
+        <i class="bi bi-sun"></i>
+
+        <div class="form-check form-switch m-0">
+          <input type="checkbox" class="form-check-input" id="themeSwitch" (change)="toggleTheme($event)" />
+        </div>
+
+        <i class="bi bi-moon"></i>
+      </div>
+
     </div>
-    <i class="bi bi-moon fs-6"></i>
   </div>
 </header>
+
 
 <!-- Sidebar -->
 <div class="sidebar" [class.sidebar-visible]="showSidebar">
   <div class="sidebar-content">
-    <div class="d-flex justify-content-between align-items-center">
-      <h4 class="px-3">Menu</h4>
-      <i class="bi bi-x fs-1 mx-3" (click)="closeSidebar()"></i>
+
+    <div class="d-flex justify-content-between align-items-center px-3">
+      <h4 class="m-0">Menu</h4>
+      <i class="bi bi-x fs-1 cursor-pointer" (click)="closeSidebar()"></i>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" style="background-color: var(--bg-color); color: var(--text-color);">Início</li>
-      <li class="list-group-item" style="background-color: var(--bg-color); color: var(--text-color);">Cardápio</li>
-      <li class="list-group-item" style="background-color: var(--bg-color); color: var(--text-color);">Sobre</li>
-      <li class="list-group-item" style="background-color: var(--bg-color); color: var(--text-color);">Contato</li>
+
+    <ul class="list-group list-group-flush mt-3">
+      <li class="list-group-item">Início</li>
+      <li class="list-group-item">Cardápio</li>
+      <li class="list-group-item">Sobre</li>
+      <li class="list-group-item">Contato</li>
     </ul>
+
   </div>
 </div>

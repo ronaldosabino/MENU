@@ -20,14 +20,14 @@ export class MenuComponent {
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           price: '20',
-          image: 'assets/cafedamanha2.png',
+          image: 'assets/brunch.png',
         },
         {
           subtitle: 'Brunch',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           price: '25',
-          image: 'assets/cafedamanha2.png',
+          image: 'assets/brunch.png',
         },
       ],
     },
@@ -41,14 +41,14 @@ export class MenuComponent {
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           price: '38',
-          image: 'assets/almoco.png',
+          image: 'assets/lunch.png',
         },
         {
           subtitle: 'Frango à parmegiana',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           price: '28',
-          image: 'assets/almoco.png',
+          image: 'assets/lunch.png',
         },
       ],
     },
@@ -62,14 +62,14 @@ export class MenuComponent {
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           price: '20',
-          image: 'assets/sobremesa.png',
+          image: 'assets/dessert.png',
         },
         {
           subtitle: 'Pudim',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           price: '15',
-          image: 'assets/sobremesa.png',
+          image: 'assets/dessert.png',
         },
       ],
     },
@@ -79,7 +79,7 @@ export class MenuComponent {
       anchor: '#drink',
       items: [
         {
-          subtitle: 'Suco de manga',
+          subtitle: 'Suco de Laranja',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
           price: '18',
@@ -111,11 +111,11 @@ export class MenuComponent {
   ];
 
   carouselItems: any[] = [
-    // {
-    //   title: 'Almoço',
-    //   description: 'Temos o melhor menu executivo da região',
-    //   image: 'assets/almoco.png',
-    // },
+    {
+      title: 'Almoço',
+      description: 'Temos o melhor menu executivo da região',
+      image: 'assets/almoco.png',
+    },
     {
       title: 'Sobremesa',
       description: 'Temos a melhor sobremesa da região',
@@ -142,7 +142,7 @@ export class MenuComponent {
         items: section.items.filter(
           (subitem: any) =>
             subitem.subtitle.toLowerCase().includes(term) ||
-            section.title.toLowerCase().includes(term)
+            section.title.toLowerCase().includes(term),
         ),
       }))
       .filter((section) => section.items.length > 0);

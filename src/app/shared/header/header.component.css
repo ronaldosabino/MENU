@@ -1,13 +1,30 @@
-/* Fundo escuro ao abrir o menu */
+/* HEADER */
+.header {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 3 colunas iguais */
+.header-col {
+  flex: 1;
+}
+
+/* Logo controlada */
+.logo {
+  max-height: 45px;
+}
+
+/* Cursor Bootstrap helper */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Overlay */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* opacidade */
-  z-index: 1000; /* abaixo da sidebar */
-  pointer-events: all;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
 /* Sidebar */
@@ -17,19 +34,23 @@
   left: 0;
   height: 100vh;
   width: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: var(--bg-color);
-  color: var(--text-color);
   transition: 0.3s ease;
-  z-index: 1000; /* acima do overlay */
+  z-index: 1000;
 }
 
 .sidebar-visible {
   width: 250px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-content {
-  height: 100%;
   padding-top: 1rem;
+}
+
+/* Sidebar items com tema */
+.list-group-item {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: none;
 }
