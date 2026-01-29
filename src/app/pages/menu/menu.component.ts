@@ -123,7 +123,7 @@ export class MenuComponent {
     },
     {
       title: 'Fast Food',
-      description: 'Temoso melhor Fast Food da região',
+      description: 'Temos o melhor Fast Food da região',
       image: 'assets/fastfood.png',
     },
   ];
